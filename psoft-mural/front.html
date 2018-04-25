@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body style="background-color:black">
+  <small><p><a href="/api">API</a> | <a href="http://bit.ly/muralps">Documentação</a></p></small>
+ <style type="text/css">
+body {
+  color:cyan;
+}
+</style>
+  <hr>
+  <h1>Mural Projeto de Software</h1>
+  <button type="button" onclick="mudarEstado('cadastro')">POST</button>
+   <div id="cadastro" style="display: none"
+
+    <form id="form">
+    <h2>Insira a menagem:</h2>
+    <p>Titulo:<br><input type="text" name="titulo"</p>
+    <p>Mensagem:<br><input type="text" name="mensagem"</p>
+    <p>Autor:<br><input type="text" name="autor"</p>
+    <p>Id:<br><input type="text" name="id"</p>
+    <p>Senha:<br><input type="text" name="senha"</p>
+    </form>
+    <button type="submit" form="form" value="submit">Enviar</button>
+
+  
+  <div id="listagem"></div>
+  <script src="client.js"></script>
+</body>
+</html>
