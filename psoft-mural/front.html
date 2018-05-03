@@ -3,99 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
-  <style> 
-  .header {
-    background-color: lavender;
-    text-align: center;
-    padding: 0.1px;
-
-}
-  .newspaper {
-    -webkit-column-count: 2; 
-    -moz-column-count: 2; 
-    column-count: 2;
-    -webkit-column-gap: 30px; 
-    -moz-column-gap: 30px; 
-    column-gap: 30px;
-    -webkit-column-rule-style: solid; 
-    -moz-column-rule-style: solid;
-    column-rule-style: solid;
-   }
-   div.one{
-    border-style: solid;
-    border-color: red;
-
-}
-   </style>
+  <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body style="background-color:lavender">
   <small><p><a href="/api">API</a> | <a href="http://bit.ly/muralps">Documentação</a></p></small>
- <style type="text/css">
-body {
-  color:darkslategray;
-}
-</style>
+
   <hr>
+
   <h1 class="header">Mural Projeto de Software - Gustavo Lino</h1>
 
-  <ul>
-  <style>
-
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-    position: sticky;
-    margin: 0;
-    padding: 0;
-    top: 0;
-
-}
-
-
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: centers;
-    
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-.topnav a:hover {
-    background-color: #4CAF50;
-}
-
-</style>
-  <div class="topnav">
-    <a href="front.html">Home</a>
-    <a onclick="mudarEstado('cadastro')">Postar</a>
-    <a href="#">Sobre</a>
-  </div>
+  <ol>
+    <li>
+      <a class="active" href="front.html">Home</a>
+    </li>
+    <li>
+      <a  id="popup" onclick="div_show()">Postar</a>
+    </li>
+    <li>
+      <a href="#delete">Deletar</a>
+    </li>
+    <li style="float:right">
+      <a href="#about">About</a>
+    </li>
+  </ol>
+  
  <br>
-   <div id="cadastro" style="display: none">
 
-    <form id="form">
+  <div id="abc">
+    <div id="popupContact">
+    
+    <form action="#" id="form" method="POST" name="form" >
+    <img id="close" src="fechar.png" onclick="div_hide()">
     <h2>Insira a mensagem:</h2>
-    <p>Titulo:<br><input type="text" name="titulo"</p>
-    <p>Mensagem:<br><input type="text" name="mensagem"</p>
-    <p>Autor:<br><input type="text" name="autor"</p>
-    <p>Id:<br><input type="text" name="id"</p>
-    <p>Senha:<br><input type="text" name="senha"</p>
+    <input id="name" name="titulo" placeholder="Título" type="text">
+    <input id="email" name="autor" placeholder="Autor" type="text">
+    <input id="id" name="id" placeholder="id" type="text">
+    <input id="senha" name="senha" placeholder="senha" type="password">
+    <textarea id="msg" name="msg" placeholder="Message"></textarea>
+    <a href="javascript:%20check_empty()" id="submit">Enviar</a>
     </form>
-    <button type="button" onclick="criarMSG()">Enviar</button>
+</div>
 </div>
   
-  <div class="newspaper" id="listagem"></div>
+  <div id="listagem"></div>
   
   <script src="client.js"></script>
 </body>
