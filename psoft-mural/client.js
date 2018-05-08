@@ -25,6 +25,7 @@ function criarMSG() {
 	mensagem["msg"] = document.getElementById("mensagem").value;
 	mensagem["author"] = document.getElementById("autor").value;
 	mensagem["credentials"] = document.getElementById("id").value + ":" + document.getElementById("senha").value;
+	alert("Mensagem Enviada com Sucesso...")
 
 	enviarMSG(mensagem)
 	
@@ -44,7 +45,7 @@ function check_empty() {
 	if (document.getElementById('titulo').value == "" || document.getElementById('autor').value == "" || document.getElementById('msg').value == "" || document.getElementById('id').value == "" || document.getElementById('senha').value == "") {
 		alert("Preencha todos os Campos");
 	} else {
-		document.getElementById('form').submit();
+		criarMSG();
 		alert("Mensagem Enviada com Sucesso...");
 	}
 }
