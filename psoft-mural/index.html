@@ -14,7 +14,7 @@
 
   <ol>
     <li>
-      <a class="active" href="front.html">Home</a>
+      <a class="active" href="index.html">Home</a>
     </li>
     <li>
       <a  id="popup" href="javascript:%20div_show('postar')">Postar</a>
@@ -23,7 +23,7 @@
       <a id="popup" href="javascript:%20div_show('delete')">Deletar</a>
     </li>
     <li style="float:right">
-      <a href="#about">About</a>
+      <a id="about" href="../psoft-mural/about/indexA.html">About</a>
     </li>
   </ol>
   
@@ -32,7 +32,7 @@
   <div id="postar">
     <div id="popupContact">
     
-    <form action="front.html" id="form" method="POST" name="form" >
+    <form action="index.html" id="form" method="POST" name="form" >
     <img id="close" src="fechar.png" onclick="div_hide('postar')">
     <h2>Insira a mensagem:</h2>
     <input id="title" name="titulo" placeholder="Título" type="text">
@@ -48,7 +48,7 @@
 <div id="delete">
   <div id="popupContact">
 
-    <form action="front.html" id="form" method="DELETE" name="form">
+    <form action="index.html" id="form" method="DELETE" name="form">
       <img id="closeD" src="fechar.png" onclick="div_hide('delete')">
       <h2>Deletar uma Mensagem:</h2>
       <input id="login" name="login" placeholder="Id" type="text">

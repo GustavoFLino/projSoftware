@@ -194,7 +194,7 @@ cursor:pointer
     justify-content: center;
 }
 .link-bloco {
-    background: lightblue;
+    background: rgba(173, 216, 230, 0.644);
     color:black;
     display: inline-block;
     margin: 10px;
