@@ -3,11 +3,13 @@ const listagem_view = document.getElementById('listagem');
 const mensagens = [];
 
 function update_view() {
-	const items = mensagens.map(e => `<li>Titulo: ${e.title}, Mensagem:${e.msg}, Autor: ${e.author}, Enviado em:${e.created_at}</li>`).join("\n<br>");
+	mensagens.sort((a, b) => a.created_at > b.created_at ? -1 : 1);
+	const items = mensagens.map(e => `<div class="link-bloco">
+ 	 <div class = link-bloco-centro>#${e.id}</div><h3>Autor(a) : ${e.author}</br></br> Titulo : ${e.title} </br> </br>Mensagem : ${e.msg}</h3> </div>`).join(" ");;
 	listagem_view.innerHTML = '<ul>' + items + '</ul>';
 }
 
-function enviarMSG() {
+function enviarMSG(mensagem) {
 	fetch("http://150.165.85.16:9900/api/msgs", {
 		method: "POST",
 		body: JSON.stringify(mensagem)
@@ -21,13 +23,13 @@ function enviarMSG() {
 
 function criarMSG() {
 	mensagem = {}
-	mensagem["title"] = document.getElementById("titulo").value;
-	mensagem["msg"] = document.getElementById("mensagem").value;
-	mensagem["author"] = document.getElementById("autor").value;
+	mensagem["title"] = document.getElementById("title").value;
+	mensagem["msg"] = document.getElementById("msg").value;
+	mensagem["author"] = document.getElementById("author").value;
 	mensagem["credentials"] = document.getElementById("id").value + ":" + document.getElementById("senha").value;
-	alert("Mensagem Enviada com Sucesso...")
 
 	enviarMSG(mensagem)
+	alert("Mensagem Enviada com Sucesso...");
 	
 }
 
@@ -42,11 +44,10 @@ function mudarEstado(entrada) {
 
 
 function check_empty() {
-	if (document.getElementById('titulo').value == "" || document.getElementById('autor').value == "" || document.getElementById('msg').value == "" || document.getElementById('id').value == "" || document.getElementById('senha').value == "") {
+	if (document.getElementById('title').value == "" || document.getElementById('author').value == "" || document.getElementById('msg').value == "" || document.getElementById('id').value == "" || document.getElementById('senha').value == "") {
 		alert("Preencha todos os Campos");
 	} else {
 		criarMSG();
-		alert("Mensagem Enviada com Sucesso...");
 	}
 }
 

@@ -6,7 +6,7 @@
     padding: 0.1px;
 
 }
-   div.one{
+div.one{
     border-style: solid;
     border-color: red;
 
@@ -55,6 +55,7 @@ width:100%;
 height:100%;
 opacity:.95;
 top:0;
+z-index: 99999;
 left:0;
 display:none;
 position:fixed;
@@ -157,4 +158,22 @@ color:#fff;
 font-family:'Raleway',sans-serif;
 font-size:18px;
 cursor:pointer
+}
+.link-bloco-centro {
+    color: #000;
+    display: block;
+    margin: auto;
+    padding: auto;
+    width: 150px;
+    text-align: center;
+    justify-content: center;
+}
+.link-bloco {
+    background: lightblue;
+    color:black;
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px 50px;
+    height: auto;
 }

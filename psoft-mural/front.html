@@ -35,17 +35,17 @@
     <form action="front.html" id="form" method="POST" name="form" >
     <img id="close" src="fechar.png" onclick="div_hide()">
     <h2>Insira a mensagem:</h2>
-    <input id="name" name="titulo" placeholder="Título" type="text">
-    <input id="email" name="autor" placeholder="Autor" type="text">
+    <input id="title" name="titulo" placeholder="Título" type="text">
+    <input id="author" name="autor" placeholder="Autor" type="text">
     <input id="id" name="id" placeholder="id" type="text">
     <input id="senha" name="senha" placeholder="senha" type="password">
     <textarea id="msg" name="msg" placeholder="Message"></textarea>
-    <a onclick="criarMSG()" id="submit">Enviar</a>
+    <a href="javascript:%20check_empty()" id="submit">Enviar</a>
     </form>
 </div>
 </div>
   
-  <div id="listagem"></div>
+  <div style="position: relative;" id="listagem"></div>
   
   <script src="client.js"></script>
 </body>
