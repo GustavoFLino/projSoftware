@@ -33,17 +33,23 @@ function criarMSG() {
 	
 }
 
+function deletarMSG() {
+	const login = document.getElementById("login").value;
+	const pass = document.getElementById("pass").value;
+	const numMsg = document.getElementById("nmsg").value;
 
-function mudarEstado(entrada) {
-	  var display = document.getElementById(entrada).style.display;
-	  if (display == "none")
-	    document.getElementById(entrada).style.display = 'block';
-	  else
-	    document.getElementById(entrada).style.display = 'none';
+	fetch('http://150.165.85.16:9900/api/msgs/' + numMsg, {
+		method: 'DELETE',
+		body: JSON.stringify({
+			credentials: login + ":" + pass
+		})
+	});
+	alert("Mensagem Deletada com Sucesso...")
+	
 }
 
-
-function check_empty() {
+//verificação de vazio do enviar e deletar
+function check_emptyE() {
 	if (document.getElementById('title').value == "" || document.getElementById('author').value == "" || document.getElementById('msg').value == "" || document.getElementById('id').value == "" || document.getElementById('senha').value == "") {
 		alert("Preencha todos os Campos");
 	} else {
@@ -51,14 +57,26 @@ function check_empty() {
 	}
 }
 
-function div_show() {
-	document.getElementById('abc').style.display = "block";
+function check_emptyD() {
+	if (document.getElementById('login').value == "" || document.getElementById('pass').value == "" || document.getElementById('nmsg').value == "") {
+		alert("Preencha todos os Campos");
+	} else {
+		deletarMSG();
+	}
 }
 
-function div_hide() {
-	document.getElementById('abc').style.display = "none";
+
+//Function para popup do enviar e deletar
+function div_show(element) {
+	document.getElementById(element).style.display = "block";
 }
 
+function div_hide(element) {
+	document.getElementById(element).style.display = "none";
+}
+
+
+//fetchs
 fetch('http://150.165.85.16:9900/api/msgs',{
 	
 	 method: "POST",
