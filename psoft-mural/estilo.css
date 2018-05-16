@@ -4,11 +4,8 @@
     background-color: lavender;
     text-align: center;
     padding: 0.1px;
-
-}
-div.one{
-    border-style: solid;
-    border-color: red;
+    top: 0px;
+    text-shadow: 2px 2px 5px gray;
 
 }
 
@@ -201,4 +198,8 @@ cursor:pointer
     padding: 10px;
     border-radius: 15px 50px;
     height: auto;
+    box-shadow: 10px 10px 5px grey;
+}
+.footer{
+    bottom: 0px
 }
